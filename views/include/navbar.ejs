@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+    <div class="container-fluid px-4">
+
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold text-danger" href="/listings">
+            WanderLust
+        </a>
+
+
+        <!-- Mobile Menu Button -->
+        <button 
+            class="navbar-toggler" 
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+
+            <!-- Search Bar -->
+            <form class="d-flex mx-auto my-2 my-lg-0" role="search">
+
+                <input 
+                    class="form-control rounded-pill"
+                    type="search"
+                    placeholder="Search listings..."
+                    aria-label="Search">
+
+                <button  
+                    class="btn btn-danger rounded-pill ms-2 search-btn" 
+                    type="submit"> 
+                    Search 🔍
+                </button>
+
+            </form>
+
+
+            <!-- Navigation Links -->
+            <div class="navbar-nav ms-auto align-items-lg-center">
+
+
+                <!-- All Listings -->
+                <a class="nav-link" href="/listings">
+                    🏡 Explore
+                </a>
+
+
+                <!-- Add Listing -->
+                <a class="nav-link" href="/listings/new">
+                    ➕ Add Listing
+                </a>
+                <!-- Authentication -->
+                <% if (currentUser) { %>
+
+                    <!-- Logged In User -->
+                    <span class="nav-link">
+                        👋 Welcome, <%= currentUser.username %>
+                    </span>
+
+
+                    <!-- Logout -->
+                    <a class="nav-link" href="/logout">
+                        Logout
+                    </a>
+
+                <% } else { %>
+
+                    <!-- Login -->
+                    <a class="nav-link" href="/login">
+                        
+                        <b>Login</b>
+                    </a>
+
+                    <!-- Sign Up -->
+                    <a 
+                        class="btn btn-danger rounded-pill px-3 ms-lg-2" 
+                        href="/signup">
+                        Sign Up
+                    </a>
+                <% } %>
+            </div>
+
+        </div>
+
+    </div>
+</nav>

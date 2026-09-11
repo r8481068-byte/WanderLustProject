@@ -1,0 +1,34 @@
+<% if (successMsg && successMsg.length > 0) { %>
+
+    <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+
+        <strong>Success!</strong>
+        <%= successMsg[0] %>
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert">
+        </button>
+
+    </div>
+
+<% } %>
+
+
+<% if (errorMsg && errorMsg.length > 0) { %>
+
+    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+
+        <strong>Error!</strong>
+        <%= errorMsg[0] %>
+
+        <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert">
+        </button>
+
+    </div>
+
+<% } %>

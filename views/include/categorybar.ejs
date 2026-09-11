@@ -1,0 +1,142 @@
+<!-- Airbnb Style Category Bar -->
+
+<div class="category-bar">
+
+  <!-- Categories -->
+
+  <div class="category-list">
+
+    <a href="/listings" class="category active">
+      <span class="category-icon">🌍</span>
+      <span>All</span>
+    </a>
+
+    <a href="/listings" class="category">
+      <span class="category-icon">🏠</span>
+      <span>Homes</span>
+    </a>
+
+    <a href="/listings" class="category">
+      <span class="category-icon">🎈</span>
+      <span>Experiences</span>
+    </a>
+
+    <a href="/listings" class="category">
+      <span class="category-icon">🛎️</span>
+      <span>Services</span>
+    </a>
+
+  </div>
+
+
+  <!-- Right Side -->
+
+  <div class="category-right">
+
+    <a href="/listings/new">
+      Become a host
+    </a>
+
+    <button class="round-btn">
+      🌐
+    </button>
+
+    <button
+      class="round-btn"
+      onclick="toggleCategoryMenu()"
+    >
+      ☰
+    </button>
+
+  </div>
+
+
+  <!-- Search Bar -->
+
+  <div class="airbnb-search">
+
+    <div>
+      <strong>Where</strong>
+      <span>Search destinations</span>
+    </div>
+
+    <div>
+      <strong>When</strong>
+      <span>Add dates</span>
+    </div>
+
+    <div>
+      <strong>Who</strong>
+      <span>Add guests</span>
+    </div>
+
+    <!-- <button>
+      🔍
+    </button> -->
+
+  </div>
+
+
+  <!-- Menu -->
+
+  <div
+    id="categoryMenu"
+    class="category-menu"
+  >
+
+    <a href="/help">
+      ❓ Help Centre
+    </a>
+
+    <hr>
+
+    <strong>
+      Become a host
+    </strong>
+
+    <p>
+      It's easy to start hosting and earn extra income.
+    </p>
+
+    <hr>
+
+    <a href="#">
+      Refer a host
+    </a>
+
+    <a href="#">
+      Find a co-host
+    </a>
+
+    <hr>
+
+    <% if (currentUser) { %>
+
+      <a href="/logout">
+        Log out
+      </a>
+
+    <% } else { %>
+
+      <a href="/login">
+        Log in or sign up
+      </a>
+
+    <% } %>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  function toggleCategoryMenu() {
+
+    const menu = document.getElementById("categoryMenu");
+
+    menu.classList.toggle("show");
+
+  }
+
+</script>
